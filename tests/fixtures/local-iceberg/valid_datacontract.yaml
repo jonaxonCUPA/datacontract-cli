@@ -1,0 +1,23 @@
+dataContractSpecification: 1.2.1
+id: orders-unit-test
+info:
+  title: Orders Unit Test
+  version: 1.0.0
+servers:
+  production:
+    type: local
+    path: ./fixtures/local-iceberg/data/orders
+    format: iceberg
+    dataProductId: orders
+models:
+  orders:
+    fields:
+      order_id:
+        type: string 
+        unique: true
+        required: true
+      order_timestamp:
+        required: true
+      order_total:
+        type: bigint
+        required: true
